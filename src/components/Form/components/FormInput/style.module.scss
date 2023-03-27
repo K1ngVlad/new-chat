@@ -1,0 +1,22 @@
+.formInput {
+  .title {
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    .link {
+      color: #007aff;
+    }
+  }
+  input {
+    font-family: 'Helvetica';
+    padding: 12px;
+    background: #f9f9f9cc;
+    height: 48px;
+    border: 1px solid #eeeeee;
+    border-radius: 4px;
+    width: 100%;
+    outline: none;
+    font-size: 20px;
+    line-height: 22px;
+  }
+}
