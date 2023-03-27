@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import s from './style.module.scss';
 
 const FormInput = (props) => {
-  const { title, linkTitle, linkUrl, inputType } = props;
+  const { title, linkTitle, linkUrl, inputType, name } = props;
   return (
     <div className={`${s.formInput} ${props.className}`}>
       <div className={s.title}>
@@ -14,7 +14,7 @@ const FormInput = (props) => {
           </Link>
         )}
       </div>
-      <input type={inputType} required />
+      <input type={inputType} name={name} required />
     </div>
   );
 };

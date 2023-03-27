@@ -5,6 +5,7 @@ const api = [
     type: 'input',
     inputType: 'text',
     title: 'Email',
+    name: 'email',
     id: 0,
   },
   {
@@ -13,6 +14,7 @@ const api = [
     title: 'Password',
     linkTitle: 'Forgot password?',
     linkUrl: recovery_path,
+    name: 'password',
     id: 1,
   },
   {

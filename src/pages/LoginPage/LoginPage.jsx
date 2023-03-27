@@ -1,5 +1,5 @@
-import { Form, formComponentRender } from '../../components/Form';
-import { List } from '../../components/List';
+import { formComponentRender } from '../../components/Form';
+import { Form, List } from '../../components/';
 import { api } from './api';
 
 const LoginPage = () => {
