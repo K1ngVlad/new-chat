@@ -19,6 +19,7 @@ const api = [
   },
   {
     type: 'button',
+    submitType: 'login',
     title: 'Login',
     id: 2,
   },

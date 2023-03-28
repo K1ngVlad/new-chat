@@ -4,7 +4,7 @@ import { api } from './api';
 
 const LoginPage = () => {
   return (
-    <Form title="Login">
+    <Form title="Login" formType="login">
       <List elems={api} func={formComponentRender}></List>
     </Form>
   );

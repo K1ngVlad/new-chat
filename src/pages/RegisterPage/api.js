@@ -26,11 +26,12 @@ const api = [
     type: 'input',
     inputType: 'password',
     title: 'Repeat password',
-    name: 'Repeat password',
+    name: 'repeatPassword',
     id: 6,
   },
   {
     type: 'button',
+    submitType: 'register',
     title: 'Register',
     id: 2,
   },
