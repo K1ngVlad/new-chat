@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { FormError } from './components/';
 import { FormContext } from './FormContext';
 import { onSubmitHeandler } from './onSubmitHeandler';
@@ -13,7 +12,6 @@ const Form = (props) => {
   const [repeatPassword, setRepeatPassword] = useState('');
   const [error, setError] = useState(null);
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const state = {
@@ -33,14 +31,7 @@ const Form = (props) => {
         <h1>{props.title}</h1>
         <form
           onSubmit={(e) =>
-            onSubmitHeandler(
-              e,
-              props.formType,
-              state,
-              dispatch,
-              navigate,
-              setError
-            )
+            onSubmitHeandler(e, props.formType, state, dispatch, setError)
           }
         >
           <div className={s.box}>

@@ -5,19 +5,19 @@ const onSubmitHeandler = async (
   formType,
   state,
   dispatch,
-  navigate,
-  setError
+  setError,
+  auth,
+  navigate
 ) => {
   e.preventDefault();
-  console.log('началось...');
   try {
     switch (formType) {
       case 'login':
-        login(state, dispatch, navigate, setError);
+        login(state, dispatch, setError, auth, navigate);
         break;
 
       case 'register':
-        register(state, dispatch, navigate, setError);
+        register(state, dispatch, setError, auth, navigate);
         break;
 
       default:

@@ -7,8 +7,11 @@ import s from './style.module.scss';
 const ErrorPage = () => {
   return (
     <div className={s.errorPage}>
-      Такой страницы не существует
-      <Link to={chat_path}>Вернуться в чат</Link>
+      <span className={s.status}>404</span>
+      <p>Оой...Мы не нашли запрашиваемую страницу.</p>
+      <Link to={chat_path}>
+        <button>Вернуться обратно</button>
+      </Link>
     </div>
   );
 };

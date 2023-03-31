@@ -5,4 +5,28 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  .status {
+    font-size: 360px;
+    line-height: 436px;
+    -webkit-text-stroke-width: 4px;
+    -webkit-text-stroke-color: #285497;
+    color: transparent;
+  }
+  p {
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    color: #19345e;
+  }
+  button {
+    margin-top: 64px;
+    padding: 24px 48px;
+    background: #285497;
+    border-radius: 8px;
+    font-size: 24px;
+    line-height: 29px;
+    color: #ffffff;
+    border: none;
+    outline: none;
+  }
 }

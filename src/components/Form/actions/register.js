@@ -3,18 +3,22 @@ import {
   createUserWithEmailAndPassword,
   updateProfile,
 } from 'firebase/auth';
-import { chat_path } from '../../../routes';
 import { setUser } from '../../../store/slices/userSlice';
+import { errorHeandler } from './errorHeandler';
 
-const register = async (state, dispatch, navigate, setError) => {
+const register = async (state, dispatch, setError) => {
   const { name, email, password, repeatPassword } = state;
 
   try {
+    if (name.length < 3) {
+      throw new SyntaxError('Client: Error (user name less than 3 characters)');
+    }
     if (password !== repeatPassword) {
-      throw new SyntaxError('Пароли не совпадают');
+      throw new SyntaxError("Client: Error (passwords don't match)");
     }
 
     const auth = getAuth();
+    console.log(auth);
     const userCredential = await createUserWithEmailAndPassword(
       auth,
       email,
@@ -33,13 +37,11 @@ const register = async (state, dispatch, navigate, setError) => {
         token: user.accessToken,
       })
     );
-    navigate(chat_path);
   } catch (error) {
     const errorCode = error.code;
     const errorMessage = error.message;
-    console.log(errorMessage);
     console.error(errorMessage, errorCode);
-    setError(errorMessage);
+    errorHeandler(errorMessage, setError);
   }
 };
 
