@@ -6,6 +6,7 @@ export {
   none_path,
   main_path,
   home_path,
+  avatar_path,
   any_path,
 } from './paths';
 

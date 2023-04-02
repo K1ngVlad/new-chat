@@ -8,14 +8,16 @@ const userSlice = createSlice({
     setUser(state, action) {
       state.name = action.payload.name;
       state.email = action.payload.email;
-      state.token = action.payload.token;
+      state.password = action.payload.password;
       state.id = action.payload.id;
+      state.avatar = action.payload.avatar;
     },
     removeUser(state) {
       state.name = null;
       state.email = null;
-      state.token = null;
+      state.password = null;
       state.id = null;
+      state.avatar = null;
     },
   },
 });

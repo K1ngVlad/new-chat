@@ -1,0 +1,21 @@
+.chatElem {
+  width: 100%;
+  height: 107px;
+  padding: 20px 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.chatElemAdd {
+  width: 100%;
+  height: 107px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background: rgba(195, 209, 195, 0.2);
+  img {
+    width: 52px;
+    height: 52px;
+    margin-right: 50px;
+  }
+}

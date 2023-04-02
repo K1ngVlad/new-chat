@@ -1,4 +1,4 @@
-import { FormButton, FormInput, FormText } from './components';
+import { ChoisenPhoto, FormButton, FormInput, FormText } from './components';
 
 import s from './style.module.scss';
 
@@ -13,6 +13,9 @@ const formComponentRender = (elem) => {
       break;
     case 'text':
       Component = FormText;
+      break;
+    case 'choisenPhoto':
+      Component = ChoisenPhoto;
       break;
     default:
       break;

@@ -5,7 +5,9 @@ import { useContext } from 'react';
 
 import { login_path } from '../../routes';
 import { GlobalContext } from '../../context';
-import { Loading } from '../../components';
+import { Chat, ChatList, Loading } from '../../components';
+
+import userAvatar from '../../assets/svg/userAvatar.svg';
 
 import s from './style.module.scss';
 
@@ -23,8 +25,11 @@ const ChatPage = () => {
 
   return (
     <div className={s.chatPage}>
-      Пользователь вошёл
-      <button onClick={() => signOut(auth)}>Выйти</button>
+      <ChatList />
+      <Chat />
+      {/* Пользователь вошёл
+      <img alt="avatar" src={user.photoURL ? user.photoURL : userAvatar} />
+      <button onClick={() => signOut(auth)}>Выйти</button> */}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { login, register } from './actions';
+import { login, register, setAvatar } from './actions';
 
 const onSubmitHeandler = async (
   e,
@@ -7,17 +7,22 @@ const onSubmitHeandler = async (
   dispatch,
   setError,
   auth,
-  navigate
+  navigate,
+  db
 ) => {
   e.preventDefault();
   try {
     switch (formType) {
       case 'login':
-        login(state, dispatch, setError, auth, navigate);
+        login(state, dispatch, setError, auth);
         break;
 
       case 'register':
-        register(state, dispatch, setError, auth, navigate);
+        register(state, dispatch, setError, auth, navigate, db);
+        break;
+
+      case 'avatar':
+        setAvatar(state, dispatch, setError, auth, navigate, db);
         break;
 
       default:

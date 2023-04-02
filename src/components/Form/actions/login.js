@@ -1,11 +1,11 @@
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+
 import { setUser } from '../../../store/slices/userSlice';
 import { errorHeandler } from './errorHeandler';
 
-const login = async (state, dispatch, setError) => {
+const login = async (state, dispatch, setError, auth) => {
   try {
     const { email, password } = state;
-    const auth = getAuth();
     const userCredential = await signInWithEmailAndPassword(
       auth,
       email,
@@ -13,12 +13,17 @@ const login = async (state, dispatch, setError) => {
     );
     const user = userCredential.user;
 
+    const userData = {
+      name: user.displayName,
+      email: user.email,
+      id: user.uid,
+      password: user.password,
+      avatar: user.photoURL,
+    };
+
     dispatch(
       setUser({
-        name: user.displayName,
-        email: user.email,
-        id: user.uid,
-        token: user.accessToken,
+        userData,
       })
     );
   } catch (error) {

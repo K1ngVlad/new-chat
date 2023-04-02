@@ -5,9 +5,11 @@ import {
   RedirectPage,
   RegisterPage,
 } from '../pages';
+import { AvatarPage } from '../pages/AvatarPage/AvatarPage';
 
 import {
   any_path,
+  avatar_path,
   chat_path,
   home_path,
   login_path,
@@ -28,6 +30,10 @@ const routes = [
   {
     path: register_path,
     Component: RegisterPage,
+  },
+  {
+    path: avatar_path,
+    Component: AvatarPage,
   },
   {
     path: none_path,

@@ -1,12 +1,11 @@
-import {
-  getAuth,
-  createUserWithEmailAndPassword,
-  updateProfile,
-} from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
+
 import { setUser } from '../../../store/slices/userSlice';
 import { errorHeandler } from './errorHeandler';
+import { avatar_path } from '../../../routes';
 
-const register = async (state, dispatch, setError) => {
+const register = async (state, dispatch, setError, auth, navigate, db) => {
   const { name, email, password, repeatPassword } = state;
 
   try {
@@ -17,8 +16,6 @@ const register = async (state, dispatch, setError) => {
       throw new SyntaxError("Client: Error (passwords don't match)");
     }
 
-    const auth = getAuth();
-    console.log(auth);
     const userCredential = await createUserWithEmailAndPassword(
       auth,
       email,
@@ -27,16 +24,16 @@ const register = async (state, dispatch, setError) => {
     console.log('Аккаунт создан');
     const user = userCredential.user;
     await updateProfile(user, { displayName: name });
-    console.log('Имя добавлено');
     console.log(user);
-    dispatch(
-      setUser({
-        name: user.displayName,
-        email: user.email,
-        id: user.uid,
-        token: user.accessToken,
-      })
-    );
+    const userData = {
+      name,
+      email,
+      password,
+      id: user.uid,
+    };
+    await setDoc(doc(db, 'users', user.uid), userData);
+    dispatch(setUser(userData));
+    navigate(avatar_path);
   } catch (error) {
     const errorCode = error.code;
     const errorMessage = error.message;

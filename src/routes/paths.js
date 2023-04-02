@@ -2,6 +2,7 @@ const chat_path = '/chat';
 const login_path = '/login';
 const register_path = '/register';
 const recovery_path = '/recovery';
+const avatar_path = '/avatar';
 
 const none_path = '/';
 const main_path = '/main';
@@ -16,6 +17,7 @@ export {
   recovery_path,
   none_path,
   main_path,
+  avatar_path,
   home_path,
   any_path,
 };

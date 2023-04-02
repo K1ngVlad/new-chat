@@ -1,0 +1,11 @@
+.chatList {
+  height: 100%;
+  width: 306px;
+  .head {
+    height: 80px;
+  }
+  .body {
+    height: calc(100% - 80px);
+    overflow-y: scroll;
+  }
+}

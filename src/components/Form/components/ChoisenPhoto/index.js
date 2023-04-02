@@ -1,0 +1,1 @@
+export { ChoisenPhoto } from './ChoisenPhoto';
