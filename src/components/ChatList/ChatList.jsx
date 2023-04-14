@@ -1,21 +1,20 @@
-import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { ChatElem } from './ChatElem';
-import { addGroup } from './addGroup';
+import pencil from '../../assets/svg/pencil.svg';
 
 import s from './style.module.scss';
+import { useContext } from 'react';
+import { PopupContext } from '../../context';
+import { addGroup } from './addGroup';
 
 const ChatList = () => {
-  const [list, setList] = useState('groups');
-  const { availableChats, availableGroups } = useSelector(
-    (state) => state.chat
-  );
-  const dispath = useDispatch();
+  const { setPopup } = useContext(PopupContext);
+
   return (
     <div className={s.chatList}>
-      <div className={s.head}>Messages</div>
-      <div className={s.body}></div>
+      <button onClick={() => addGroup(setPopup)} className={s.addBtn}>
+        <img alt="add" src={pencil} />
+      </button>
     </div>
   );
 };

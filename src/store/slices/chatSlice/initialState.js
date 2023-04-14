@@ -1,8 +1,6 @@
 const initialState = {
-  availableСhats: [],
-  availableGroups: [],
+  chats: [],
   currentChat: null,
-  messages: null,
 };
 
 export { initialState };
