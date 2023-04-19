@@ -1,7 +1,7 @@
 import { GroupPopUp } from './components';
 
 const addGroup = (setPopup) => {
-  setPopup(<GroupPopUp></GroupPopUp>);
+  setPopup(<GroupPopUp />);
 };
 
 export { addGroup };

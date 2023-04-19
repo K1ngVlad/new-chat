@@ -7,14 +7,14 @@ import cross from '../../assets/svg/cross.svg';
 import s from './style.module.scss';
 
 const PopUp = () => {
-  const { popUp } = useContext(PopupContext);
+  const { popup, setPopup } = useContext(PopupContext);
   return (
     <div className={s.popUp}>
       <div className={s.container}>
-        <button className={s.close}>
+        <button onClick={() => setPopup(null)} className={s.close}>
           <img alt="X" src={cross} />
         </button>
-        dsadadsa
+        {popup}
       </div>
     </div>
   );

@@ -1,1 +1,1 @@
-export { chatReducer } from './chatSlice';
+export { chatReducer, setChats, setCurrentChat } from './chatSlice';

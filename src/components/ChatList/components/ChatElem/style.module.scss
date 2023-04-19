@@ -1,0 +1,37 @@
+.chatElem {
+  width: 100%;
+  height: 107px;
+  padding: 20px 16px;
+  display: flex;
+  justify-content: space-between;
+  img {
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .info {
+    width: 211px;
+    height: 67px;
+    h3 {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 16px;
+      letter-spacing: 0.022em;
+      color: #262626;
+      margin-bottom: 6px;
+    }
+    p {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 0.022em;
+      color: #262626;
+    }
+  }
+}

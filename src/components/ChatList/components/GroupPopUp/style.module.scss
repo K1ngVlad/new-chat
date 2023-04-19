@@ -1,0 +1,39 @@
+.groupInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  .setImg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: grey;
+    input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-position: center;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+  input {
+    width: 250px;
+    height: 50px;
+  }
+}
+.btnBox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
